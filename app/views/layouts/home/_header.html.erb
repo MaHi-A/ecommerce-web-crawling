@@ -1,0 +1,38 @@
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container navbar-color">
+    <div class="navbar-header">
+      <button aria-controls="navbar" aria-expanded="false" class="navbar-toggle collapsed" data-target="#navbar" data-toggle="collapse" type="button">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <div class="navbar-brand ems p-l-15">
+        <a href='#'>
+        <% if signed_in? %>
+          <%= current_user.first_name %>
+        <% else %>
+          PromptCloud Crawling Application
+        <% end %></a>
+      </div>
+    </div>
+    <div class="navbar-collapse collapse" id="navbar">
+      <% if !signed_in? %>
+        <ul class="nav navbar-nav navbar-right ems p-r-15">
+          <li>
+            <%= link_to 'Signin', new_user_session_path %>
+          </li>
+           <li>
+            <%= link_to 'Signup', new_user_registration_path %>
+          </li>
+        </ul>
+      <% else %>
+        <ul class="nav navbar-nav navbar-right ems p-r-15">
+          <li>
+          <%= link_to 'Logout', destroy_user_session_path, method: 'delete' %>
+          </li>
+        </ul>
+      <% end %>
+    </div>
+  </div>
+</nav>

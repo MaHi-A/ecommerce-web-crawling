@@ -1,0 +1,62 @@
+<div class="top-title-wrapper">
+  <div class="container p-t-50">
+    <div class="row">
+      <div class="col-md-4 col-sm-4 col-xs-12"></div>
+      <div class="col-md-4 col-sm-4 col-xs-12">
+        <div class="page-info">
+          <h2 class="h2-page-title text-center">
+
+          </h2>
+          <h2 class="h2-page-desc"></h2>
+        </div>
+      </div>
+      <div class="col-md-4 col-sm-4 col-xs-12"></div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-4 col-sm-2 col-xs-12"></div>
+    <div class="col-md-4 col-sm-8 col-xs-12">
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+          <%= devise_error_messages! %>
+          <div class="list-group">
+            <div class="list-group-item">
+              <%= f.text_field :email, class: 'form-control no-border', required: true, autofocus: true,  placeholder: 'Email' %>
+            </div>
+            <div class="list-group-item">
+              <%= f.password_field :password, class: 'form-control no-border', required: true, autocomplete: "off", placeholder: 'Password' %>
+            </div>
+          </div>
+          <div class="checkbox">
+            <label>
+              <%= f.check_box :remember_me, :as => :boolean if devise_mapping.rememberable? %>
+              <small>Stay signed in</small>
+            </label>
+          </div>
+          <%= f.submit "Sign in", {class: 'btn btn-lg btn-primary btn-block '} %>
+          <div class="line line-dashed m-b-none"></div>
+          <p></p>
+          <p class="text-muted text-center">
+            <%= render "/users/shared/links" %>
+          <p>
+
+          </p>
+          <p class="text-muted text-center">
+            <small>Do not have an account?</small>
+          </p>
+          </p>
+          <a class="btn btn-lg btn-default btn-block" href="/users/sign_up">Create an account</a>
+      <% end %>
+      <div class="text-center padder">
+        <p>
+          <small>
+           © 2016 PromptCloud Crawling Application
+
+          </small>
+        </p>
+      </div>
+    </div>
+    <div class="col-md-4 col-sm-2 col-xs-12"></div>
+  </div>
+</div>

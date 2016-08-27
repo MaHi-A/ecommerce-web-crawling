@@ -3,13 +3,71 @@
  * listed below.
  *
  * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
  *
  * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+/**
+ *=require font-awesome.min
+ *=require bootstrap.min
+ *=require common
  *= require_self
  */
+
+
+
+.avatar{
+    border-radius: 50%;
+    height: 32px;
+    width: 32px;
+    margin-top: 10px;
+    margin-left: 15px;
+}
+
+/*Application Header Dropdown link*/
+
+.navbar-nav > .user-menu > .dropdown-menu > li.user-header {
+    height: 175px;
+    padding: 30px;
+    background: #383838;
+    text-align: center;
+}
+
+.navbar-nav > .user-menu > .dropdown-menu > li.user-footer {
+    background-color: #f9f9f9;
+    padding: 10px;
+}
+
+.navbar-nav > .user-menu > .dropdown-menu > li.user-header > img {
+    z-index: 5;
+    height: 90px;
+    width: 90px;
+    border: 8px solid;
+    border-color: transparent;
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.navbar-nav > .user-menu > .dropdown-menu {
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    padding: 1px 0 0 0;
+    border-top-width: 0;
+    width: 280px;
+}
+
+.navbar-nav > .user-menu > .dropdown-menu > li.user-footer:before, .navbar-nav > .user-menu > .dropdown-menu > li.user-footer:after {
+    display: table;
+    content: " ";
+}
+
+.navbar-nav > .user-menu > .dropdown-menu > li.user-footer:after {
+    clear: both;
+}
+
+.sub-border{
+    border-bottom:5px solid white;
+    margin-bottom: 20px;
+}
