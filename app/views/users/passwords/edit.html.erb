@@ -1,25 +1,52 @@
-<h2>Change your password</h2>
-
-<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
-  <%= devise_error_messages! %>
-  <%= f.hidden_field :reset_password_token %>
-
-  <div class="field">
-    <%= f.label :password, "New password" %><br />
-    <% if @minimum_password_length %>
-      <em>(<%= @minimum_password_length %> characters minimum)</em><br />
-    <% end %>
-    <%= f.password_field :password, autofocus: true, autocomplete: "off" %>
+<div class="top-title-wrapper">
+  <div class="container p-t-50">
+    <div class="row">
+      <div class="col-md-4 col-sm-2 col-xs-12"></div>
+      <div class="col-md-4 col-sm-8 col-xs-12">
+        <div class="page-info">
+          <h4 class="h3-page-title text-center">Change your password</h4>
+          <h2 class="h2-page-desc"></h2>
+        </div>
+      </div>
+      <div class="col-md-4 col-sm-2 col-xs-12"></div>
+    </div>
   </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation, "Confirm new password" %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-4 col-sm-2 col-xs-12"></div>
+    <div class="col-md-4 col-sm-8 col-xs-12">
+      <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
+          <%= f.hidden_field :reset_password_token %>
+          <%= devise_error_messages! %>
+          <div class="list-group">
+            <div class="list-group-item">
+              <%= f.password_field :password, class: 'form-control no-border', autocomplete: "off", 'data-required' => 'true', autofocus: true,  placeholder: 'New Password' %>
+            </div>
+          </div>
+          <div class="list-group">
+            <div class="list-group-item">
+              <%= f.password_field :password_confirmation, autocomplete: "off", class: 'form-control no-border', 'data-required' => 'true', autofocus: true,  placeholder: 'Confirm Password' %>
+            </div>
+          </div>
+          <%= f.submit "Change my password", {class: 'btn btn-lg btn-primary btn-block '} %>
+          <div class="line line-dashed m-b-none"></div>
+          <p></p>
+          <p class="text-muted text-center">
+            <small>Do not have an account?</small>
+          </p>
+          <a class="btn btn-lg btn-default btn-block" href="/users/sign_up">Sign up</a>
+      <% end %>
+      <div class="text-center padder">
+        <p>
+          <small>
+            © 2016 PromptCloud Crawling Application
+          </small>
+        </p>
+      </div>
+    </div>
+    <div class="col-md-4 col-sm-2 col-xs-12"></div>
   </div>
+</div>
 
-  <div class="actions">
-    <%= f.submit "Change my password" %>
-  </div>
-<% end %>
 
-<%= render "users/shared/links" %>
