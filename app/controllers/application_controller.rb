@@ -16,6 +16,7 @@ class ApplicationController < ActionController::Base
   end
 
   def after_sign_in_path_for(resource)
+    dashboard_path
   end
 
   def after_sign_out_path_for(resource)
@@ -26,6 +27,8 @@ class ApplicationController < ActionController::Base
   protected
 
   def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:sign_up) {|parameter| parameter.permit(:email, :password)}
+    devise_parameter_sanitizer.permit(:sign_up) do |parameter|
+      parameter.permit(:first_name, :last_name, :gender, :email, :password)
+    end
   end
 end

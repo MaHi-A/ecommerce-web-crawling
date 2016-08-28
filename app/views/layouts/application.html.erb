@@ -1,14 +1,31 @@
-<!DOCTYPE html>
 <html>
-  <head>
-    <title>CrawlingApp</title>
-    <%= csrf_meta_tags %>
-
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
-
-  <body>
+<head>
+  <title>
+    PromptCloud Crawling Application
+  </title>
+  <%= stylesheet_link_tag 'application', media: 'all' %>
+  <%= csrf_meta_tags %>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+</head>
+<body>
+<div class="container">
+  <%= render :partial => '/layouts/home/header' %>
+  <div class="flash bg-success">
+    <% flash.each do |type, message| %>
+        <div class=" alert alert-<%= type %>">
+            <span>
+              <%= message %>
+            </span>
+          <span class="pull-right x" style="cursor:pointer; padding-right: 20px">X</span>
+        </div>
+    <% end %>
+  </div>
+  <div class="main-color" id="main-wrap">
     <%= yield %>
-  </body>
+  </div>
+</div>
+<%= render :partial => '/layouts/home/footer' %>
+<%= javascript_include_tag 'application' %>
+</body>
 </html>
