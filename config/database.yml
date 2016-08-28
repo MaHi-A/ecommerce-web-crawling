@@ -26,6 +26,6 @@ production:
   encoding: utf8
   reconnect: true
   host: localhost
-  username: root
-  password:
+  username: ikcyurhrwsithq:lvd
+  password: lvd-1XH7u4FUQbXT4tcxO8H-_K
   database: crawling_app_production
