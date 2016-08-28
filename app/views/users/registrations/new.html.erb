@@ -20,6 +20,12 @@
           <%= devise_error_messages! %>
           <div class="list-group">
             <div class="list-group-item">
+              <%= f.text_field :first_name, class: 'form-control no-border', required: true, placeholder: 'First name' %>
+            </div>
+            <div class="list-group-item">
+              <%= f.text_field :last_name, class: 'form-control no-border ', required: true, placeholder: 'Last name' %>
+            </div>
+            <div class="list-group-item">
               <%= f.text_field :email, class: 'form-control no-border', required: true, placeholder: 'Email' %>
             </div>
             <div class="list-group-item">
