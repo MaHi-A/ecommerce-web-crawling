@@ -1,0 +1,23 @@
+<h4> Recent Activities </h4>
+  <div class="table-responsive">
+    <table class="table table-bordered table-inverse">
+      <thead>
+        <tr>
+          <th>S.No</th>
+          <th>Time</th>
+          <th>Crawled URL</th>
+          <th>Products crawled</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% activities.each_with_index do |activity, index| %>
+          <tr>
+            <td><%= index + 1 %></td></div>
+            <td><%= activity.created_at.strftime('%F %I:%M %p') %></td>
+            <td><%= activity.crawl.url %></td>
+            <td><%= activity.crawl.products.length %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+</div>

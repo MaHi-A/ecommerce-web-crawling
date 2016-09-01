@@ -1,1 +1,27 @@
-show.html.erb
+<div class="container">
+  <div class="row">
+    <div class= "col-md-12">
+      <div class="col-md-9 col-sm-8 col-xs-12">
+        <%= form_for(@crawl, url: user_start_crawling_path(current_user), html: { method: :post }) do |f| %>
+          <div class="list-group">
+            <div class="list-group-item">
+              <%= f.text_field :url, class: 'form-control no-border', autocomplete: "off", required: true, autofocus: true,  placeholder: 'paste snapdeal products url or single product url to start crawling' %>
+            </div>
+          </div>
+      </div>
+      <div class="col-md-2 col-sm-3 col-xs-12" style='margin-top: 5px'>
+        <%= f.submit "Start Crawling", {class: 'btn btn-lg btn-primary btn-block '} %>
+      </div>
+      <% end %>
+    </div>
+  </div>
+  <div class="row">
+    <div class= "col-md-12" style='margin-right: 60px'>
+    <% if @activities.present? %>
+      <%= render partial: 'activities', locals: { activities: @activities } %>
+    <% else %>
+      <h4> You haven't started any crawling yet! Hurry up start crawling the snapdeal website by pasting the correct url!!</h4>
+    <% end %>
+    </div>
+  </div>
+</div>
