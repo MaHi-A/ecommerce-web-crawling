@@ -1,11 +1,11 @@
 class Crawl::CrawlDecorator
 
-  attr_accessor :url, :products, :document, :user, :controller
+  attr_accessor :url, :products, :document, :user, :controller, :crawl
 
   def initialize(controller, user, params)
     @products = []
     @user = user
-    @url = params[:crawl][:url]
+    @url = params[:crawl][:url].strip
     @controller = controller
   end
 
@@ -53,7 +53,7 @@ class Crawl::CrawlDecorator
 
   def store_data
     if products.present?
-      crawl = create_crawl(products)
+      @crawl = create_crawl(products)
       create_activity crawl
     end
   end
@@ -84,6 +84,6 @@ class Crawl::CrawlDecorator
   end
 
   def redirect_with_success_flash
-    controller.redirect_to '/dashboard', alert: 'You have successfully crawlled the snapdeal website! Kudos!!'
+    controller.redirect_to "/users/#{user.slug}/crawls/#{crawl.slug}", alert: 'You have successfully crawlled the snapdeal website! Kudos!!'
   end
 end
