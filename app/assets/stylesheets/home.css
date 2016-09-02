@@ -67,8 +67,3 @@ input.error {
   height: 100%;
   width: 100%;
 }
-
-.bg-image {
-  background: url(<%= asset_path 'panorama-HD.jpg' %>);
-  background-size: 100% 100%;
-}
