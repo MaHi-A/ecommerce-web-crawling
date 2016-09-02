@@ -18,7 +18,7 @@
   <div class="row">
     <div class= "col-md-12" style='margin-right: 60px'>
     <% if @activities.present? %>
-      <%= render partial: 'activities', locals: { activities: @activities } %>
+      <%= render partial: 'shared/activities', locals: { activities: @activities } %>
     <% else %>
       <h4> You haven't started any crawling yet! Hurry up start crawling the snapdeal website by pasting the correct url!!</h4>
     <% end %>

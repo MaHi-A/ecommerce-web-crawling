@@ -11,12 +11,12 @@
       </thead>
       <tbody>
         <% activities.each_with_index do |activity, index| %>
-          <tr>
-            <td><%= index + 1 %></td></div>
-            <td><%= activity.created_at.strftime('%F %I:%M %p') %></td>
-            <td><%= activity.crawl.url %></td>
-            <td><%= activity.crawl.products.length %></td>
-          </tr>
+            <tr>
+              <td><%= index + 1 %></td></div>
+              <td><%= activity.created_at.strftime('%F %I:%M %p') %></td>
+              <td> <%= link_to activity.crawl.url, user_crawl_path(current_user.slug, activity.crawl.slug) %></td>
+              <td><%= activity.crawl.products.length %></td>
+            </tr>
         <% end %>
       </tbody>
     </table>

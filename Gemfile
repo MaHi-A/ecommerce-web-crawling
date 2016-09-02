@@ -31,6 +31,7 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'devise'
 gem 'draper', github: 'drapergem/draper'
+gem 'friendly_id', '~> 5.1.0'
 
 group :development, :test do
   gem 'sqlite3'

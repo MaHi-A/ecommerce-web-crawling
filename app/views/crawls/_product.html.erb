@@ -1,0 +1,47 @@
+  <div class="table-responsive">
+    <table class="table table-bordered table-inverse">
+
+    <% crawl.products.each_with_index do |product, index| %>
+      <tr>
+        <td style='vertical-align: top; font-weight: bold; width: 20%'>Title: </td>
+        <td> <%= product[:title] %> </td>
+      </tr>
+      <tr>
+        <td style='vertical-align: top; font-weight: bold; width: 20%'>Actual Price: </td>
+        <td> <%= product[:actual_price] %> </td>
+      </tr>
+      <tr>
+        <td style='vertical-align: top; font-weight: bold; width: 20%'>Offer Price:</td>
+        <td> <%= product[:offer_price] %> </td>
+      </tr>
+      <tr>
+        <td style='vertical-align: top; font-weight: bold; width: 20%'>Offer Percentage:  </td>
+        <td> <%= product[:offer_percentage] %> </td>
+      </tr>
+      <tr>
+        <td style='vertical-align: top; font-weight: bold; width: 20%'>EMI : </td>
+        <td> <%= product[:emi] %> </td>
+      </tr>
+      <tr>
+        <td style='vertical-align: top; font-weight: bold; width: 20%'>Ratings:</td>
+        <td> <%= product[:ratings] %> </td>
+      </tr>
+      <tr>
+        <td style='vertical-align: top; font-weight: bold; width: 20%'>Reviews:</td>
+        <td> <%= product[:reviews] %> </td>
+      </tr>
+      <tr>
+        <td style='vertical-align: top; font-weight: bold; width: 20%'>Extra Offers:</td>
+        <td> <%= product[:extra_offers] %> </td>
+      </tr>
+      <tr>
+        <td style='vertical-align: top; font-weight: bold; width: 20%'>Delivery In :</td>
+        <td> <%= product[:delivery_in] %> </td>
+      </tr>
+      <tr>
+        <td style='vertical-align: top; font-weight: bold; width: 20%'>Image Url:</td>
+        <td> <a href = "<%= product[:image] %>" target = '_blank'><%= product[:image] %> </a></td>
+      </tr>
+    <% end %>
+  </table>
+</div>

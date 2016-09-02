@@ -1,0 +1,29 @@
+<h2> Below are the crawling details </h2>
+<div class="table-responsive">
+  <table class="table table-bordered table-inverse">
+    <tr>
+      <td >Crawl Created Time</td>
+      <td ><%= crawl.created_at %></td>
+    </tr>
+    <tr>
+      <td >Crawled URL</td>
+      <td ><%= crawl.url %></td>
+    </tr>
+    <tr>
+      <td >Total Products crawled</td>
+      <td > <%= crawl.products.length %> </td>
+    </tr>
+    <% if crawl.products.length == 1 %>
+      <%= render partial: 'product', locals: { crawl: crawl } %>
+    <% else %>
+      <%= render partial: 'products', locals: { crawl: crawl } %>
+    <% end %>
+  </table>
+</div>
+
+
+
+
+
+
+
