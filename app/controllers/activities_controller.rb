@@ -1,6 +1,6 @@
 class ActivitiesController < ApplicationController
 
   def index
-    @activities = current_user.activities.includes(:crawl).reverse
+    @activities = ActivitiesDecorator.decorate(current_user.activities.includes(:crawl).reverse)
   end
 end
