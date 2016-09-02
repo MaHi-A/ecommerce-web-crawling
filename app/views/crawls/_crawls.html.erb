@@ -2,15 +2,15 @@
 <div class="table-responsive">
   <table class="table table-bordered table-inverse">
     <tr>
-      <td >Crawl Created Time</td>
+      <td class = 'bold-font'>Crawl Created Time</td>
       <td ><%= crawl.created_at %></td>
     </tr>
     <tr>
-      <td >Crawled URL</td>
+      <td class = 'bold-font'>Crawled URL</td>
       <td ><%= crawl.url %></td>
     </tr>
     <tr>
-      <td >Total Products crawled</td>
+      <td class = 'bold-font'>Total Products crawled</td>
       <td > <%= crawl.products.length %> </td>
     </tr>
     <% if crawl.products.length == 1 %>

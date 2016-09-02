@@ -57,3 +57,9 @@ label.error {
 input.error {
     border: 1px dotted red;
 }
+
+.cursor-pointer {
+  cursor:pointer;
+  padding-right: 20px";
+}
+
