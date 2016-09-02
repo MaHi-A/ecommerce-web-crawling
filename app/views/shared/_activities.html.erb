@@ -1,4 +1,5 @@
-<h4> Recent Activities </h4>
+<% if activities.present? %>
+  <h4> Recent Activities </h4>
   <div class="table-responsive">
     <table class="table table-bordered table-inverse">
       <thead>
@@ -20,4 +21,7 @@
         <% end %>
       </tbody>
     </table>
-</div>
+  </div>
+<% else %>
+  <h4> You haven't started any crawling yet! Hurry up start crawling the snapdeal website by pasting the correct url!!</h4>
+<% end %>

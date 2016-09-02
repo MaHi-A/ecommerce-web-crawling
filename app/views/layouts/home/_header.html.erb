@@ -1,4 +1,4 @@
-<nav class="navbar navbar-inverse navbar-fixed-top">
+<nav class="navbar navbar-inverse navbar-fixed-top bg-color">
   <div class="container navbar-color">
     <div class="navbar-header">
       <button aria-controls="navbar" aria-expanded="false" class="navbar-toggle collapsed" data-target="#navbar" data-toggle="collapse" type="button">
@@ -10,7 +10,9 @@
       <div class="navbar-brand ems p-l-15">
         <a href='#'>
         <% if signed_in? %>
-          <%= current_user.first_name %>
+          <a href = '/dashboard'>
+          <span class = 'font-color'> <%= current_user.first_name %></span>
+          </a>
         <% else %>
           <a href = '/'>
           <span class = 'header-color'>PromptCloud Crawling Application</span></a>

@@ -17,11 +17,7 @@
   </div>
   <div class="row">
     <div class= "col-md-12">
-    <% if @activities.present? %>
       <%= render partial: 'shared/activities', locals: { activities: @activities } %>
-    <% else %>
-      <h4> You haven't started any crawling yet! Hurry up start crawling the snapdeal website by pasting the correct url!!</h4>
-    <% end %>
     </div>
   </div>
 </div>

@@ -80,3 +80,14 @@
     font-weight: bold;
 }
 
+.width-100 {
+    width: 100%;
+}
+
+.bg-color {
+    background-color: lightslategrey;
+}
+
+.font-color {
+    color: white;
+}
