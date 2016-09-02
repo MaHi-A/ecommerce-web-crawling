@@ -58,12 +58,11 @@ input.error {
     border: 1px dotted red;
 }
 
-.cursor-pointer {
-  cursor:pointer;
-  padding-right: 20px;
-}
-
 .fit-page {
   height: 100%;
   width: 100%;
+}
+
+#main-wrap.main-color {
+  background-color: #e9f0f9;
 }

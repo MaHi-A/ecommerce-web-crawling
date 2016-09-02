@@ -91,3 +91,7 @@
 .font-color {
     color: white;
 }
+
+#main-wrap.main-color {
+  background-color: white;
+}

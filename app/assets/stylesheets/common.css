@@ -31,10 +31,6 @@ footer {
 #main-wrap{
   min-height: 1200px;
 }
-#main-wrap.main-color {
-  background-color: white;
-}
-
 
 /*Padding*/
 .p-t {
@@ -153,4 +149,9 @@ div.desc {
 
 .header-color {
   color: aliceblue;
+}
+
+.cursor-pointer {
+  cursor:pointer;
+  padding-right: 20px;
 }
