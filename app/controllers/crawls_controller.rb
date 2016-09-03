@@ -10,7 +10,7 @@ class CrawlsController < ApplicationController
   end
 
   def export_crawl
-    file, file_type, filename = Crawl::CrawlExport.call(@crawl)
+    file, file_type, filename = Exports::Excel::CrawlInfo.generate(@crawl)
     send_file file.path, filename: filename, type: file_type, disposition: "attachment"
   end
 
