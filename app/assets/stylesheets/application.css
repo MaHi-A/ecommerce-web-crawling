@@ -95,3 +95,20 @@
 #main-wrap.main-color {
   background-color: white;
 }
+
+.margin-20 {
+    margin-top: 20%;
+    background-color: lightgrey;
+}
+
+.margin-top {
+    margin-top: 85px;
+}
+
+.green{
+    color: green;
+}
+
+.padding-0 {
+    padding: 0px;
+}

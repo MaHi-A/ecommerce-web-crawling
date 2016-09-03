@@ -1,5 +1,5 @@
 <% if activities.present? %>
-  <h4> Recent Activities </h4>
+  <h4 class = 'margin-top'> Recent Activities </h4>
   <div class="table-responsive">
     <table class="table table-bordered table-inverse">
       <thead>
@@ -7,7 +7,7 @@
           <th>S.No</th>
           <th>Time</th>
           <th>Crawled URL</th>
-          <th>Products crawled</th>
+          <th>Total Products crawled</th>
         </tr>
       </thead>
       <tbody>
@@ -23,5 +23,10 @@
     </table>
   </div>
 <% else %>
-  <h4> You haven't started any crawling yet! Hurry up start crawling the snapdeal website by pasting the correct url!!</h4>
+  <div class= "col-md-3"></div>
+  <div class= "col-md-6 margin-20">
+    <h4> You haven't started any crawling yet! </h4>
+    <h4>Hurry up start crawling the snapdeal website by pasting the correct url!!</h4>
+  </div>
+  <div class= "col-md-3"></div>
 <% end %>
