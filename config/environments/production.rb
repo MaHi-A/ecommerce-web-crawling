@@ -86,12 +86,11 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { host: 'http://crawling-app.herokuapp.com' }
 
   config.action_mailer.smtp_settings = {
-   address: 'smtp.gmail.com',
+   address: 'smtp.mailgun.com',
    port: 587,
-   user_name: ENV['GOOGLE_USERNAME'],
-   password: ENV['GOOGLE_PASSWORD'],
+   domain: 'geeksolutions.com.mailgun.org',
+   user_name: ENV['MAILGUN_USERNAME'],
+   password: ENV['MAILGUN_PASSWORD'],
    authentication: "plain",
-   enable_starttls_auto: true,
-   openssl_verify_mode: 'none'
   }
 end
