@@ -11,6 +11,7 @@ class CrawlsController < ApplicationController
 
   def export_crawl
     file, file_type, filename = Exports::Excel::CrawlInfo.generate(@crawl)
+    ApplicationMailer.mail_admin(current_user, @crawl).deliver
     send_file file.path, filename: filename, type: file_type, disposition: "attachment"
   end
 
