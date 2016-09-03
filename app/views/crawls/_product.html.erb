@@ -1,49 +1,52 @@
-  <div class="table-responsive">
-    <table class="table table-bordered table-inverse">
-
-    <% crawl.products.each_with_index do |product, index| %>
-      <div style="margin-bottom: 50px">
-        <tr>
-          <td class = 'bold-font'>Title</td>
-          <td> <%= product[:title] %> </td>
-        </tr>
-        <tr>
-          <td class = 'bold-font'>Actual Price</td>
-          <td> <%= product[:actual_price] %> </td>
-        </tr>
-        <tr>
-          <td class = 'bold-font'>Offer Price</td>
-          <td> <%= product[:offer_price] %> </td>
-        </tr>
-        <tr>
-          <td class = 'bold-font'>Offer Percentage</td>
-          <td> <%= product[:offer_percentage] %> </td>
-        </tr>
-        <tr>
-          <td class = 'bold-font'>EMI </td>
-          <td> <%= product[:emi] %> </td>
-        </tr>
-        <tr>
-          <td class = 'bold-font'>Ratings</td>
-          <td> <%= product[:ratings] %> </td>
-        </tr>
-        <tr>
-          <td class = 'bold-font'>Reviews</td>
-          <td> <%= product[:reviews] %> </td>
-        </tr>
-        <tr>
-          <td class = 'bold-font'>Extra Offers</td>
-          <td> <%= product[:extra_offers] %> </td>
-        </tr>
-        <tr>
-          <td class = 'bold-font'>Delivery In</td>
-          <td> <%= product[:delivery_in] %> </td>
-        </tr>
-        <tr>
-          <td class = 'bold-font'>Image Url</td>
-          <td> <a href = "<%= product[:image] %>" target = '_blank'><%= product[:image] %> </a></td>
-        </tr>
-      </div>
-    <% end %>
-  </table>
+<div class="col-md-2 col-sm-2 col-xs-4"></div>
+  <div class="col-md-8 col-sm-10 col-xs-8">
+      <div class="table-responsive">
+        <table class="table table-bordered table-inverse">
+        <% crawl.products.each_with_index do |product, index| %>
+          <div style="margin-bottom: 50px">
+            <tr>
+              <td class = 'bold-font'>Title</td>
+              <td> <%= product[:title] %> </td>
+            </tr>
+            <tr>
+              <td class = 'bold-font'>Actual Price</td>
+              <td> <%= product[:actual_price] %> </td>
+            </tr>
+            <tr>
+              <td class = 'bold-font'>Offer Price</td>
+              <td> <%= product[:offer_price] %> </td>
+            </tr>
+            <tr>
+              <td class = 'bold-font'>Offer Percentage</td>
+              <td> <%= product[:offer_percentage] %> </td>
+            </tr>
+            <tr>
+              <td class = 'bold-font'>EMI </td>
+              <td> <%= product[:emi] %> </td>
+            </tr>
+            <tr>
+              <td class = 'bold-font'>Ratings</td>
+              <td> <%= product[:ratings] %> </td>
+            </tr>
+            <tr>
+              <td class = 'bold-font'>Reviews</td>
+              <td> <%= product[:reviews] %> </td>
+            </tr>
+            <tr>
+              <td class = 'bold-font'>Extra Offers</td>
+              <td> <%= product[:extra_offers] %> </td>
+            </tr>
+            <tr>
+              <td class = 'bold-font'>Delivery In</td>
+              <td> <%= product[:delivery_in] %> </td>
+            </tr>
+            <tr>
+              <td class = 'bold-font'>Image Url</td>
+              <td> <a href = "<%= product[:image] %>" target = '_blank'><%= product[:image] %> </a></td>
+            </tr>
+          </div>
+        <% end %>
+      </table>
+    </div>
+  </div>
 </div>

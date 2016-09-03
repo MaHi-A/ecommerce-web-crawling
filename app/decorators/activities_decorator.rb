@@ -3,3 +3,4 @@ class ActivitiesDecorator < Draper::CollectionDecorator
     self.map { |activity| activity.crawl.products.length }.sum
   end
 end
+

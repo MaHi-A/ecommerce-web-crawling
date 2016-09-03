@@ -1,29 +1,29 @@
-<div class="col-md-2 col-sm-2 col-xs-4"></div>
-  <div class="col-md-8 col-sm-10 col-xs-8">
-    <h2> Below are the crawling details </h2>
-    <div class="table-responsive">
-      <table class="table table-bordered table-inverse">
-        <tr>
-          <td class = 'bold-font'>Crawl Created Time</td>
-          <td ><%= crawl.created_at %></td>
-        </tr>
-        <tr>
-          <td class = 'bold-font'>Crawled URL</td>
-          <td ><%= crawl.url %></td>
-        </tr>
-        <tr>
-          <td class = 'bold-font'>Total Products crawled</td>
-          <td > <%= crawl.products.length %> </td>
-        </tr>
-      </table>
-    </div>
-    <% if crawl.products.length == 1 %>
-      <%= render partial: 'product', locals: { crawl: crawl } %>
-    <% else %>
-      <%= render partial: 'products', locals: { crawl: crawl } %>
-    <% end %>
-  </div>
+<h2> Below are the crawling details </h2>
+<div class="table-responsive">
+  <table class="table table-bordered table-inverse">
+    <tr>
+      <td class = 'bold-font'>Crawl Created Time</td>
+      <td ><%= crawl.created_at %></td>
+       <td> </td>
+    </tr>
+    <tr>
+      <td class = 'bold-font'>Crawled URL</td>
+      <td ><%= crawl.url %></td>
+      <td>
+        <%= link_to 'Click Here to Crawl Again',  user_start_crawling_path(current_user, crawl: {url: crawl.url}), method: 'post'%></td>
+      </tr>
+    <tr>
+      <td class = 'bold-font'>Total Products crawled</td>
+      <td > <%= crawl.products.length %> </td>
+       <td>  </td>
+    </tr>
+  </table>
 </div>
+<% if crawl.products.length == 1 %>
+  <%= render partial: 'product', locals: { crawl: crawl } %>
+<% else %>
+  <%= render partial: 'products', locals: { crawl: crawl } %>
+<% end %>
 
 
 
