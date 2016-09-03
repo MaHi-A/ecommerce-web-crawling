@@ -17,9 +17,6 @@
   </div>
   <div class="row">
     <div class= "col-md-12">
-      <% if @activities.present? %>
-        <h2> Total Products Crawled: <span class='green'> 35</span></h2>
-      <% end %>
       <%= render partial: 'shared/activities', locals: { activities: @activities } %>
     </div>
   </div>
