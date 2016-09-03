@@ -14,6 +14,10 @@ Rails.application.routes.draw do
   resources :users do
     post '/start-crawling', to: 'crawls#crawl_website'
     resources :activities, only: [:index]
-    resources :crawls, only: [:show]
+    resources :crawls, only: [:show] do
+      member do
+        get '/export-crawl', to: 'crawls#export_crawl'
+      end
+    end
   end
 end

@@ -9,13 +9,14 @@
     <tr>
       <td class = 'bold-font'>Crawled URL</td>
       <td ><%= crawl.url %></td>
-      <td>
-        <%= link_to 'Click Here to Crawl Again',  user_start_crawling_path(current_user, crawl: {url: crawl.url}), method: 'post'%></td>
+       <td> <%= link_to 'Click Here to Crawl Again',  user_start_crawling_path(current_user, crawl: {url: crawl.url}), method: 'post'%></td>
       </tr>
     <tr>
       <td class = 'bold-font'>Total Products crawled</td>
       <td > <%= crawl.products.length %> </td>
-       <td>  </td>
+       <td>
+        <%= link_to 'Click Here to Export Crawl', export_crawl_user_crawl_path(current_user, crawl.slug), method: 'get'%></td>
+     </td>
     </tr>
   </table>
 </div>
@@ -24,10 +25,3 @@
 <% else %>
   <%= render partial: 'products', locals: { crawl: crawl } %>
 <% end %>
-
-
-
-
-
-
-
