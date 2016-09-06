@@ -16,6 +16,7 @@ class ApplicationController < ActionController::Base
   end
 
   def after_sign_in_path_for(resource)
+    ApplicationMailer.sign_in_mail(current_user).deliver
     dashboard_path
   end
 
