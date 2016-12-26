@@ -67,12 +67,12 @@ class Crawl::CrawlDecorator
   end
 
   def start_crawling
-    url.match('^http://www.snapdeal.com/products/') ? product_list : single_product(document)
+    url.match('^https://www.snapdeal.com/products/') ? product_list : single_product(document)
   end
 
   def snapdeal_and_valid
-    url.match('^http://www.snapdeal.com/') &&
-      (url.match('^http://www.snapdeal.com/products/') || url.match('^http://www.snapdeal.com/product/'))
+    url.match('^https://www.snapdeal.com/') &&
+      (url.match('^https://www.snapdeal.com/products/') || url.match('^https://www.snapdeal.com/product/'))
   end
 
   def open_website
@@ -80,7 +80,7 @@ class Crawl::CrawlDecorator
   end
 
   def redirect_with_error_flash
-    controller.redirect_to '/dashboard', alert: 'You have to crawl url which starts like http://www.snapdeal.com/products/ or http://www.snapdeal.com/product/'
+    controller.redirect_to '/dashboard', alert: 'You have to crawl url which starts like https://www.snapdeal.com/products/ or https://www.snapdeal.com/product/'
   end
 
   def redirect_with_success_flash
